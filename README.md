@@ -31,10 +31,7 @@ This project consists of a Jupyter Notebook and data sources located in the data
 - Make a notebook  
 - link notebook to git repository
 - Inside the notebook change kernel to pyspark
-- sc.list_packages()
-- sc.install_pypi_package("pandas") #Install pandas
-- sc.install_pypi_package("IPython")
-- Skip the SparkSession creation  
+- Skip the SparkSession creation cell
 - Start running the cells
 
 
