@@ -71,7 +71,7 @@ To meet the requirements for the scope of the project a star schema with two dim
 
 
 
-![Bilde](Table_diagram.png)
+![Bilde](/img/Table_diagram.png)
 
 
 
