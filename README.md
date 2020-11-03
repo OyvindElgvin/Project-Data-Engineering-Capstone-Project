@@ -6,6 +6,32 @@
 
 ## Data Engineering Capstone Project
 
+
+
+## Table of contents
+* [Launch](#Launch)
+* [Project Summary](#Project_Summary)
+* [Scope the Project](#Scope_the_Project)
+* [The choice of tools and technologies.](#The_choice_of_tools_and_technologies.)
+* [Describing the datasets](#Describing_the_datasets)
+* [Conceptual Data Model](#Conceptual_Data_Model)
+* [Mapping Out the Transformation](#Mapping_Out_the_Transformation)
+* [Running the Pipeline](#Running_the_Pipeline)
+* [Project Write Up](#Project_Write_Up)
+* [Scheduling](#Scheduling)
+
+## Launch
+
+This project consists of a Jupyter Notebook and data sources located in the data folder. To run the notebook, you could clone the repo and run it, but the advisable thing to do is to run it on an EMR cluster in AWS. To launch the notebook in an EMR cluster, you would need to do the following:
+
+- Create an EMR cluster  
+- Make a notebook  
+- Open the notebook consol
+- Upload the notebook from this repo
+- Skip the SparkSession creation  
+- Start running the cells
+
+
 ### Project Summary
 This project aims to unveil information about immigration into the United States. Questions like how the flow of immigrants changes seasonally, if the destinations are dependent on temperature, and where the immigrants come from are some of the key questions this study is trying to answer.
 
@@ -13,19 +39,9 @@ Data are extracted from three different dataset sources, "I94 Immigration Data" 
 
 Apache Spark, Jupyter Notebook, and potentially Amazon Elastic MapReduce, EMR, are used to accomplish this ETL pipeline, which then writes parquet files either to an Amazon S3 bucket or locally to disk.
 
-#### The project follows the following steps:
-- Step 1: Scope the Project and Gather Data
-- Step 2: Explore and Assess the Data
-- Step 3: Define the Data Model
-- Step 4: Run ETL to Model the Data
-- Step 5: Complete Project Write Up
 
 
-
-
-### Step 1: Scope the Project and Gather Data
-
-#### Scope
+### Scope the Project
 
 The scope for this project is to create a Data Lake using an ETL pipeline. This Jupyter Notebook presents the whole process, describing and assessing the datasets, and at the bottom, running the complete ETL pipeline.  Ideally, this notebook should run on an EMR cluster in AWS, especially if using the whole immigration dataset. For this study, the star schema is chosen, making it possible to execute the various queries outlined below.  
 
@@ -61,8 +77,8 @@ information like average temperature, date, and city.
 
 
 
-### Step 3: Define the Data Model
-#### 3.1 Conceptual Data Model
+
+### Conceptual Data Model
 
 As explained in the scope of the project, the Data Model is a Data Lake leading into a star schema. As opposed to a Data Warehouse, where each schema is normalized and tailored to a specific query through the 'schema-on-write' approach, the Data Lake uses a 'schema-on-read' approach, which gives more flexibility to what queries could be made.
 
@@ -71,53 +87,13 @@ To meet the requirements for the scope of the project a star schema with two dim
 
 
 
-![Bilde](/img/Table_diagram.png)
-
-
-
-#### Immigration fact table
-- id
-- arrival_city
-- arrival_state
-- arrival_date
-- departure_date
-- year
-- month
-- country_citizenship
-- country_residence
-- age
-- gender
-- reason_for_immigration
-- visatype
-
-
-
-#### Temperature dimension table
-- city
-- date
-- year_plus_4_years
-- month
-- average_temperature
-- average_temperature_uncertainty
+![Bilde](./img/Table_diagram.png)
 
 
 
 
-#### Demographics dimension table
-- city
-- state_code
-- race
-- median_age
-- male_population
-- total_population
-- number_of_veterans
-- foreign_born
-- average_household
-- count
 
-
-
-### 3.2 Mapping Out Data Pipelines
+### Mapping Out the Transformation
 
 
 
@@ -150,8 +126,7 @@ To meet the requirements for the scope of the project a star schema with two dim
 - Drop NaNs
 
 
-### Step 4: Run Pipelines to Model the Data
-#### 4.1 Create the data model
+### Running the Pipeline
 
 
 The ETL pipeline will consist of the following sections:
@@ -170,43 +145,10 @@ The ETL pipeline will consist of the following sections:
 
 
 
-	### Step 5: Complete Project Write Up
-	* The rationale for the choice of tools and technologies is that Spark and EMR fit perfectly for this project. In my opinion, a notebook like this is pretty necessary to at least set up the ETL. The ETL itself could, of course, be a python script file, which then gets submitted to the EMR cluster, but that is outside of the scope of this project. The built-in parallelization in Spark makes it an ideal tool for working with large amounts of data.
+### Project Write Up
+
+* The rationale for the choice of tools and technologies is that Spark and EMR fit perfectly for this project. The built-in parallelization in Spark makes it an ideal tool for working with large amounts of data. In my opinion, a notebook like this is pretty necessary to at least set up the ETL. The ETL itself could, of course, be a python script, which then gets submitted to the EMR cluster.
 
 
-	#### Scheduling
-	* Since the data is aggregated in months, the ETL should be scheduled to run the first or the second day of every month.
-
-
-	#### What would change if the data was increased by 100x?
-	* If the data was increased by 100x, it would still make sense to run a script of the ETL in an AWS EMR. The EMR cluster would need to be larger, and the data would need to be stored in an S3 instead of in the EMR.
-
-
-	#### What would change if the data populates a dashboard that must be updated daily by 7 am every day?
-	* If the ETL needed to run every morning, it would make sense to set up a job in Apache Airflow and schedule it every morning. This would be an easy way to automate the scheduling and the data quality validating.
-
-
-	#### What would change if the database needed to be accessed by 100+ people?
-	* The more people accessing the data, the more CPU resources would need to be allocated to give a fast user experience. Instead of increasing the size of the EMR cluster running Spark, it would be more reasonable to write partitioned parquet files to a distributed database, like the Hadoop Distributed File System, HDFS, to secure faster query results for each user.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-create EMR cluster  
-make a notebook  
-upload that notebook  
-remove SparkSession creation  
-run  
+#### Scheduling
+* Since the data is aggregated in months, the ETL should be scheduled to run the first or the second day of every month.
