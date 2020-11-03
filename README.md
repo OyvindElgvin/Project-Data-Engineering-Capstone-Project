@@ -27,7 +27,7 @@ This project consists of a Jupyter Notebook and data sources located in the data
 - Create an EMR cluster  
   - Go to the advanced tab and select Hadoop Spark and Livy
   - Create notebook
-  - Make new link to git repository
+  - Make new link to a clone of this git repository
 - Make a notebook  
 - link notebook to git repository
 - Inside the notebook change kernel to pyspark
