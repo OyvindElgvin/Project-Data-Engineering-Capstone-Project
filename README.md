@@ -26,26 +26,14 @@ This project consists of a Jupyter Notebook and data sources located in the data
 
 - Create an EMR cluster  
   - Go to the advanced tab and select Hadoop Spark and Livy
-  - paste this in the enter configuration tab to enable PySpark
-
-    ```
-    [
-      {
-         "Classification": "spark-env",
-         "Configurations": [
-           {
-             "Classification": "export",
-             "Properties": {
-                "PYSPARK_PYTHON": "/usr/bin/python3"
-              }
-           }
-        ]
-      }
-    ]
-    ```
+  - Create notebook
+  - Make new link to git repository
 - Make a notebook  
-- Open the notebook consol
-- Upload the notebook from this repo
+- link notebook to git repository
+- Inside the notebook change kernel to pyspark
+- sc.list_packages()
+- sc.install_pypi_package("pandas") #Install pandas
+- sc.install_pypi_package("IPython")
 - Skip the SparkSession creation  
 - Start running the cells
 
