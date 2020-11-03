@@ -25,6 +25,23 @@
 This project consists of a Jupyter Notebook and data sources located in the data folder. To run the notebook, you could clone the repo and run it, but the advisable thing to do is to run it on an EMR cluster in AWS. To launch the notebook in an EMR cluster, you would need to do the following:
 
 - Create an EMR cluster  
+Go to the advanced tab and paste this in the enter configuration tab to enable PySpark
+
+```
+[
+  {
+     "Classification": "spark-env",
+     "Configurations": [
+       {
+         "Classification": "export",
+         "Properties": {
+            "PYSPARK_PYTHON": "/usr/bin/python3"
+          }
+       }
+    ]
+  }
+]
+```
 - Make a notebook  
 - Open the notebook consol
 - Upload the notebook from this repo
