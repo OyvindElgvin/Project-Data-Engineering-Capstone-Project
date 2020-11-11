@@ -24,16 +24,6 @@
 
 This project consists of a Jupyter Notebook and data sources located in the data folder. To run the notebook, you could clone the repo and run it, but the advisable thing to do is to run it on an EMR cluster in AWS. To launch the notebook in an EMR cluster, you would need to do the following:
 
-- Create an EMR cluster  
-  - Go to the advanced tab and select Hadoop Spark and Livy
-  - Create notebook
-  - Make new link to a clone of this git repository
-- Make a notebook  
-- link notebook to git repository
-- Inside the notebook change kernel to pyspark
-- Skip the SparkSession creation cell
-- Start running the cells
-
 
 - Go to EMR notebook and make a notebook with a new cluster
 - Use a key-pair
