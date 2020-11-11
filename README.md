@@ -35,6 +35,12 @@ This project consists of a Jupyter Notebook and data sources located in the data
 - Start running the cells
 
 
+- Go to EMR notebook and make a notebook with a new cluster
+- Use a key-pair
+- Create a github link to the repository
+- When the cluster is up make a link to the github repository
+
+
 ### Project Summary
 This project aims to unveil information about immigration into the United States. Questions like how the flow of immigrants changes seasonally, if the destinations are dependent on temperature, and where the immigrants come from are some of the key questions this study is trying to answer.
 
