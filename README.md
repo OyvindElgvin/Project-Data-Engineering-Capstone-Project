@@ -27,8 +27,7 @@ This project consists of a Jupyter Notebook and data sources located in the data
 
 - Go to EMR notebook and make a notebook with a new cluster
 - Use a key-pair
-- Create a github link to the repository
-- When the cluster is up make a link to the github repository
+- Link the notebook to this repository
 
 
 ### Project Summary
