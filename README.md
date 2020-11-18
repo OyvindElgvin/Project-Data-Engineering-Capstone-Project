@@ -9,8 +9,9 @@
 
 
 ## Table of contents
-* [Launch](#Launch)
+
 * [Project Summary](#Project_Summary)
+* [Launch](#Launch)
 * [Scope the Project](#Scope_the_Project)
 * [The choice of tools and technologies.](#The_choice_of_tools_and_technologies.)
 * [Describing the datasets](#Describing_the_datasets)
@@ -20,15 +21,6 @@
 * [Project Write Up](#Project_Write_Up)
 * [Scheduling](#Scheduling)
 
-## Launch
-
-This project consists of a Jupyter Notebook and data sources located in the data folder. To run the notebook, you could clone the repo and run it, but the advisable thing to do is to run it on an EMR cluster in AWS. To launch the notebook in an EMR cluster, you would need to do the following:
-
-
-- Go to EMR notebook and make a notebook with a new cluster
-- Use a key-pair
-- Link the notebook to this repository
-
 
 ### Project Summary
 This project aims to unveil information about immigration into the United States. Questions like how the flow of immigrants changes seasonally, if the destinations are dependent on temperature, and where the immigrants come from are some of the key questions this study is trying to answer.
@@ -37,7 +29,14 @@ Data are extracted from three different dataset sources, "I94 Immigration Data" 
 
 Apache Spark, Jupyter Notebook, and potentially Amazon Elastic MapReduce, EMR, are used to accomplish this ETL pipeline, which then writes parquet files either to an Amazon S3 bucket or locally to disk.
 
+## Launch
 
+This project consists of a Jupyter Notebook and data sources located in the data folder. To run the notebook, you could clone the repo and run it, but the advisable thing to do is to run it on an EMR cluster in AWS. To launch the notebook in an EMR cluster, you would need to do the following:
+
+
+- Go to EMR notebook and make a notebook with a new cluster
+- Use a key-pair
+- Link the notebook to this repository
 
 ### Scope the Project
 
