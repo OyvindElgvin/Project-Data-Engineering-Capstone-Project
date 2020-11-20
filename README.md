@@ -13,7 +13,7 @@
 * [Project Summary](#Project_Summary)
 * [Launch](#Launch)
 * [Scope the Project](#Scope_the_Project)
-* [The choice of tools and technologies.](#The_choice_of_tools_and_technologies.)
+* [The choice of tools and technologies](#The_choice_of_tools_and_technologies)
 * [Describing the datasets](#Describing_the_datasets)
 * [Conceptual Data Model](#Conceptual_Data_Model)
 * [Mapping Out the Transformation](#Mapping_Out_the_Transformation)
@@ -34,9 +34,11 @@ Apache Spark, Jupyter Notebook, and potentially Amazon Elastic MapReduce, EMR, a
 This project consists of a Jupyter Notebook and data sources located in the data folder. To run the notebook, you could clone the repo and run it, but the advisable thing to do is to run it on an EMR cluster in AWS. To launch the notebook in an EMR cluster, you would need to do the following:
 
 
-- Go to EMR notebook and make a notebook with a new cluster
-- Use a key-pair
+- Go to EMR notebook and make a notebook with a new cluster with a key-pair
 - Link the notebook to this repository
+
+Or, alternatively:
+- Open a EMR notebook and in the folder view, upload this notebook
 
 ### Scope the Project
 
